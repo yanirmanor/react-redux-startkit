@@ -4,7 +4,7 @@ module.exports = {
 	entry  : path.resolve(__dirname, './main.js'),
 	output : {
 		path: './',
-		filename: 'bundle.js',
+		filename: 'build/bundle.js',
 		sourceMapFilename: "bundle.js.map",
 	},
 	debug: true,
@@ -23,6 +23,15 @@ module.exports = {
 					presets:['es2015','react']
 				}
 			},
+			// LESS
+			{
+				test: /\.less$/,
+				loader: 'style!css!less'
+			},
+			{	// SASS
+				test: /\.scss$/,
+				loader: 'style!css!sass!autoprefixer-loader?browsers=last 2 versions'
+			}
 		]
 	}
 }
