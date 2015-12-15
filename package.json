@@ -44,10 +44,5 @@
     "style-loader": "^0.13.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
-  },
-  "config": {
-    "ghooks":{
-      "pre-commit":"npm run test-single"
-    }
   }
 }
