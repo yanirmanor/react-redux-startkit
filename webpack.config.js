@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-	entry  : path.resolve(__dirname, './main.js'),
+	entry  :  './src/index',
 	output : {
 		path: './',
 		filename: 'build/bundle.js',
@@ -22,6 +22,11 @@ module.exports = {
 				query: {
 					presets:['es2015','react']
 				}
+			},
+			{
+				test: /\.js$/,
+				loaders: ['react-hot', 'babel'],
+				include: path.join(__dirname, '..', '..', 'src')
 			},
 			// LESS
 			{
